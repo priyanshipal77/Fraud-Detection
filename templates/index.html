@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fraud Detection System</h1>
+        <form action="/analyze" method="POST">
+            <label for="sentence">Enter the sentence to classify:</label>
+            <textarea id="sentence" name="sentence" rows="4" required></textarea><br>
+            <button type="submit">Analyze</button>
+        </form>
+        {% if result %}
+        <h3>Result: {{ result }}</h3>
+        {% endif %}
+    </div>
+    <footer>
+        © 2025 Fraud Detection System | <a href="#">Privacy Policy</a>
+    </footer>
+</body>
+</html>
